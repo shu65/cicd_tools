@@ -3,7 +3,9 @@ services:
   jenkins:
     build: .
     image: my_jenkins
+    restart: always
     ports:
       - 8080:8080
     volumes:
+      - $HOME/../:/home
       - ./jenkins_home:/var/jenkins_home
