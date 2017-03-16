@@ -1,5 +1,0 @@
-git
-javadoc 
-maven-plugin 
-jobConfigHistory 
-

@@ -1,11 +1,36 @@
 version: '2'
 services:
   jenkins:
-    build: .
-    image: my_jenkins
+    build: ./jenkins/
+    image: jenkins
     restart: always
     ports:
       - 8080:8080
     volumes:
       - $HOME/../:/home
       - ./jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+    environment:
+      DOCKER_SOCKET: /var/run/docker.sock
+      DOCKER_GROUP: dockerhost
+      JENKINS_USER: jenkins
+      DOCKER_HOST: unix:///var/run/docker.sock
+
+  registry:
+    image: registry
+    restart: always
+    ports:
+      - 5000:5000
+    volumes:
+      - ./registry_data:/var/lib/registry
+
+  registry-frontend:
+    image: konradkleine/docker-registry-frontend
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      - ENV_DOCKER_REGISTRY_HOST=192.168.0.1
+      - ENV_DOCKER_REGISTRY_PORT=5000
+
