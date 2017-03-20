@@ -5,18 +5,10 @@ USER root
 
 RUN apt-get update && \
   apt-get install -y \
+    git \
     curl \
-    sudo \
-    gcc \
-    g++ \
-    libgtest-dev \
-    libboost-all-dev \
-    cmake \
-    make && \
+    sudo && \
   rm -rf /var/lib/apt/lists/*
-
-# install gtest
-RUN cd /usr/src/gtest && cmake . && cmake --build . && mv libg* /usr/local/lib/
 
 # install jenkins plugins
 COPY plugins.txt /usr/share/jenkins/plugins.txt
