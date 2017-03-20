@@ -2,7 +2,7 @@ version: '2'
 services:
   jenkins:
     build: ./jenkins/
-    image: jenkins
+    image: local_jenkins
     restart: always
     ports:
       - 8080:8080

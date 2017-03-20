@@ -1,8 +1,0 @@
-git:latest
-javadoct:latest 
-maven-plugint:latest
-jobConfigHistoryt:latest
-junitt:latest
-structst:latest
-
-

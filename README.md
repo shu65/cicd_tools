@@ -4,16 +4,14 @@
 # edit jenkins/plugins.txt
 mkdir -p jenkins_home
 mkdir -p registry_data
-
-docker-compose build
 ```
 
 ## Start jenkins 
 ```bash
-docker-compose up -d
+./start.sh
 ```
 
 ## Stop jenkins
 ```bash
-docker-compose down
+./stop.sh
 ```
