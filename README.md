@@ -1,9 +1,7 @@
 # my_jenkins
 ## Setup
 ```bash
-# edit jenkins/plugins.txt
-mkdir -p jenkins_home
-mkdir -p registry_data
+./setup.sh
 ```
 
 ## Start jenkins 
