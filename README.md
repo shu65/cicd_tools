@@ -1,15 +1,17 @@
-# my_jenkins
+# CICD tools in local
+This repository is tool set in local.
+
 ## Setup
 ```bash
 ./setup.sh
 ```
 
-## Start jenkins 
+## Start all servers
 ```bash
 ./start.sh
 ```
 
-## Stop jenkins
+## Stop all servers
 ```bash
 ./stop.sh
 ```
